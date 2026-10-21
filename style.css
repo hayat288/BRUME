@@ -222,6 +222,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+    gap: 10px;
 }
 
 .section1 h3 {
@@ -229,6 +230,49 @@ nav {
     font-weight: 600;
     color: #3b232a;
     margin: 0;
+}
+.swatch-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 1px #e0d5d3;
+}
+.swatch-label {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #8c7176;
+    font-weight: 500;
+}
+.colors>input{
+    display: none;
+}
+.info-footer-container {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 30px;
+    max-width: 650px;
+}
+.info-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background-color: #f7edee;
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 25px; 
+}
+.info-text {
+    font-size: 14px;
+    color: #6a343f;
+    font-weight: 500;
+}
+.footer-note {
+    font-size: 13px;
+    color: #8c7176;
+    margin: 0;
+    font-weight: 400;
 }
 .zone-footer {
     background-color: #cccccc;
