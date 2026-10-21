@@ -315,12 +315,24 @@ nav {
     align-items: center;
     gap: 10px;
 }
-
 .zone-footer {
-    background-color: #cccccc;
-    height: 50px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    background-color: #f3eded;
+    border-top: 1px solid #eae0de;
+    padding: 20px 40px;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+}
+.zone-footer>.right-footer {
+    font-size: 13px;
+    color: #8c7176;
+    font-weight: 400;
+}
+.zone-footer>.left-footer {
+    font-size: 13px;
+    color: #8c7176;
+    font-weight: 400;
 }
