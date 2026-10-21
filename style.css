@@ -274,6 +274,48 @@ nav {
     margin: 0;
     font-weight: 400;
 }
+.zone-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-top: 1px solid #eae0de;
+    padding: 20px 40px;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+}
+.action-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.action-subtitle {
+    font-size: 12px;
+    color: #8c7176;
+    font-weight: 400;
+}
+.action-price {
+    font-size: 24px;
+    font-weight: 600;
+    color: #3b232a;
+}
+.add-to-cart-btn {
+    background-color: #7d4350;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .zone-footer {
     background-color: #cccccc;
     height: 50px;
