@@ -1,163 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NUANCE</title>
+    <title>Chez-NUANCE</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header class="zone-header">
-        <div class="logo">
-        <a href="#">NUANCE</a>
-      </div>
-        <nav>
-            <a href="#" class="nav-link active">le studio</a>
-            <a href="#" class="nav-link">Notre Philosophie</a>
-            <a href="#" class="nav-link">Besoin d'aide</a>
-        </nav>
-        <div class=images>
-            <img src="assets/Group.png" alt="sac">
-            <img src="assets/0.png" alt="">
+    <header>
+        <p>Votre beauté, vos règles. Composez votre essentiel.</p>
+        <div class="barre">
+            <span class="logo">NUANCE</span>
+            <nav>
+                <ul class="navigation">
+                    <li><a href="#">Le studio</a></li>
+                    <li><a href="#">Notre philosophie</a></li>
+                    <li><a href="#">Besoin d’aide ?</a></li>
+                </ul>
+            </nav>
+            <img class="panier" src="assets/Group.png" alt="panier">
         </div>
     </header>
-    <main class="zone-main">
-        <div class="zone-left">
-            <div class="card-header">
-            <div class="top-badge">LE STUDIO SUR MESURE</div>
-            <div class="number">01 / 03</div>
+    <main>
+        <section class="produit">
+            <div class="image-produit">
+                <img src="assets/photo1.png" alt="images du produit">
             </div>
-            <div class="picture">
-                <img src="assets/photo1.png" alt="Lipstick">
+            <div class="info">
+                <nav class="étapes" aria-label="Etapes">01 Personnaliser — 02 Récapitulatif </nav>
+                <p class="sur-titre">LE STUDIO DE VOTRE SINGULARITÉ</p>
+                <h1>La beauté à votre image</h1>
+                <p class="intro">Une texture, une teinte, un fini. Composez l'essentiel qui vous ressemble</p>
+                <form id="configurateur">
+                    <fieldset class="cartes">
+                        <legend>01 Votre essentiel</legend>
+                        <div>
+                            <input type="radio" id="fond-de-teint" name="essentiel" value="fond-de-teint" >
+                            <label for="fond-de-teint">Fond de teint </label>
+                        </div>
+                        <div>
+                            <input type="radio" id="rouge-a-levres" name="essentiel" value="rouge-a-levres"  checked>
+                            <label for="rouge-a-levres">Rouge a levres </label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="teintes">
+                        <legend>02 Votre teinte</legend>
+                        <div>
+                            <input type="radio" id="teinte-01" name="teinte" value="nude" data-couleur="#C08B78">
+                            <label for="teinte-01">01</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="teinte-02" name="teinte" value="rosewood" data-couleur="#98526A" checked>
+                            <label for="teinte-02">02</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="teinte-03" name="teinte" value="terracotta" data-couleur="#B76D58">
+                            <label for="teinte-03">03</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="teinte-04" name="teinte" value="cerise" data-couleur="#AF354D">
+                            <label for="teinte-04">04</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="teinte-05" name="teinte" value="prune" data-couleur="#663349">
+                            <label for="teinte-05">05</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="teinte-06" name="teinte" value="chocolat" data-couleur="#563B35">
+                            <label for="teinte-06">06</label>
+                        </div>
+                        <p class="note">Un bois de rose doux aux sous-tons chauds</p>
+                    </fieldset>
+                    <fieldset class="cartes">
+                        <legend>03 Le fini</legend>
+                        <div>
+                            <input type="radio" id="fini-mat" name="fini" value="mat" data-prix="0" checked>
+                            <label for="fini-mat">Mat <span>Velouté · Inclus</span></label>
+                        </div>
+                        <div>
+                            <input type="radio" id="fini-brillant" name="fini" value="brillant" data-prix="15">
+                            <label for="fini-brillant">Brillant <span>Lumineux · + 15 DH</span></label>
+                        </div>
+                        <p class="message">
+                            <svg class="icone" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14" />
+                                <path d="M5 19l8-8" />
+                            </svg>
+                            <span id="message-fini">Le fini mat révèle la couleur avec un effet velouté.</span>
+                        </p>
+                    </fieldset>
+                    <p class="note">Le prix évolue selon vos choix. Vous pourrez les modifier au récapitulatif.</p>
+                </form>
             </div>
-            <div class="card-footer">
-            <h3 class="card-title">Une couleur. Votre caractère.</h3>
-            <p class="card-subtitle">ROUGE À LÈVRES • 02 ROSEWOOD • MAT</p>
-            <div class="card-footer-bottom">
-                <span>La couleur en liberté</span>
-                <span>Votre signature beauté</span>
+        </section>
+        <section class="barre-prix">
+            <div>
+                <p class="creation">Votre création · Rouge à lèvres</p>
+                <p class="prix" id="prix-total" aria-live="polite">00,00 DH</p>
             </div>
-            </div>
-            </div>
-            <section class="zone-right">
-                <div class="steps-nav">
-            <span class="active-step">01 Personnaliser</span>
-            <span class="separator">-</span>
-            <span class="inactive-step">02 Récapitulatif</span>
-        </div>
-
-        <span class="mini-brand-tag">LE STUDIO DE VOTRE SINGULARITÉ.</span>
-        
-        <h1 class="main-title">La beauté<br>à votre image.</h1>
-        <p class="main-desc">Une texture, une teinte, un fini.<br>Composez l'essentiel qui vous ressemble.</p>
-
-            <div class="section1">
-                <h3>01 Votre essentiel</h3>
-                <span class="choix-multiple">Choix unique</span>
-            </div>
-            <div id="sectionGroupe"></div>
-        <!-- <div class="sectionGroupe">
-            <div class="choice">
-                <label class="option">
-                    <input type="radio" name="essentiel" value="fond-de-teint">
-                    <div class="card-content">
-                        <span class="check-icon">Fond de teint</span>
-                        <span class="item-price">160,00 DH</span>
-                    </div>
-                </label>
-                <label class="option">
-                     <input type="radio" name="essentiel" value="rouge-a-levres">
-                     <div class="card-content">
-                         <span class="item-title">
-                         <span class="check-icon"></span> Rouge à lèvres
-                         </span>
-                         <span class="item-price">120,00 DH</span>
-                     </div>
-                </label>
-            </div>
-            <div class="section-groupe">
-                <div class="section1">
-                    <h3>02 Votre teinte</h3>
-                    <span class="choix-multiple">02 — Rosewood</span>
-                </div>
-                <div class="reférences">
-                    <label class="colors">
-                        <input type="radio" name="teinte" value="01">
-                        <span class="swatch-circle" style="background-color: #c38f78;"></span>
-                        <span class="swatch-label">01</span>
-                    </label>
-                    <label class="colors">
-                        <input type="radio" name="teint" value="02">
-                        <span class="swatch-circle" style="background-color: #925164;"></span>
-                        <span class="swatch-label">02</span>
-                    </label>
-                    <label class="colors">
-                        <input type="radio" name="teint" value="03">
-                        <span class="swatch-circle" style="background-color: #b56e58;"></span>
-                        <span class="swatch-label">03</span>
-                    </label>
-                    <label class="colors">
-                        <input type="radio" name="teint" value="04">
-                        <span class="swatch-circle" style="background-color: #b13e53;"></span>
-                        <span class="swatch-label">04</span>
-                    </label>
-                    <label class="colors">
-                        <input type="radio" name="teint" value="05">
-                        <span class="swatch-circle" style="background-color: #5c3043;"></span>
-                        <span class="swatch-label">05</span>
-                    </label>
-                    <label class="colors">
-                        <input type="radio" name="teint" value="06">
-                        <span class="swatch-circle" style="background-color: #523833;"></span>
-                        <span class="swatch-label">06</span>
-                    </label>
-                </div>
-            </div>
-            <div class="section">
-                <h3>03 le fini</h3>
-                <span class="choix-multiple">Choix unique</span>
-            </div>
-            <div class="choice2">
-                <label class="option2">
-                    <input type="radio" name="essentiel" value="MAT">
-                    <div class="card-content">
-                        <span class="check-icon">MAT</span>
-                        <span class="item-price">Velouté · Inclus</span>
-                    </div>
-                </label>
-                <label class="option2">
-                     <input type="radio" name="essentiel" value="Brillant">
-                     <div class="card-content">
-                         <span class="item-title">
-                         <span class="check-icon"></span> Brillant
-                         </span>
-                         <span class="item-price">Lumineux · + 15 DH</span>
-                     </div>
-                </label>
-            </div>
-        </div> -->
-        <div class="info-footer-container">
-            <div class="info-box">
-            <img src="assets/Détail.png" alt="Détail">
-            <span class="info-text">Le fini mat révèle la couleur avec un effet velouté.</span>
-            </div>
-            <p class="footer-note">Le prix évolue selon vos choix. Vous pourrez les modifier au récapitulatif.</p>
-        </div>
-    </section>
+            <button class="bouton" type="submit" form="configurateur">Ajouter au panier →</button>
+        </section>
     </main>
-    <div class="zone-action">
-        <div class="action-info">
-            <span class="action-subtitle">Votre création · Rouge à lèvres</span>
-            <span class="action-price">120,00 DH</span>
-        </div>
-        <button type="button" class="add-to-cart-btn">
-        Ajouter au panier <span class="arrow">→</span>
-    </button>
-    </div>
-    <footer class="zone-footer">
-        <span class="right-footer">NUANCE — L’essentiel, c’est vous.</span>
-        <span class="left-footer">Une création unique, la vôtre.</span>
+    <footer>
+        <p>NUANCE — L'essentiel, c'est vous.</p>
+        <p>Une création unique, la vôtre.</p>
     </footer>
     <script src="page1.js"></script>
 </body>
+
 </html>
