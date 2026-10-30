@@ -17,6 +17,13 @@ let makeupCart = [
   { id: "m6", name: "Blush Poudre", category: "Visage", variant: "Pêche", price: 20.00, quantity: 1, picture: "blush.png" },
   { id: "m4", name: "Mascara Volume", category: "Yeux", variant: "Noir", price: 15.00, quantity: 1, picture: "mascara.png" }
 ]
+
+const totalElement = document.getElementById("totale");
+const countElement = document.getElementById("item-count");
+
+const grandTotalElement = document.getElementById("total");
+
+
 // fonction d'affichage 
 function affichage() {
   const productsElement = document.querySelector(".product-list")
@@ -54,12 +61,12 @@ function affichage() {
 
 const liste = document.querySelector(".product-list");
 
-liste.addEventListener("click", function (event) {
+liste.addEventListener("click", function (event) {// event delegation
   const bouton = event.target.closest("button");
   if (!bouton) return;
 
   const card = bouton.closest(".product");
-  const id = card.dataset.id;
+  const id = card.dataset.id; // data-id
 
   for (const item of makeupCart) {
     if (item.id === id) {
@@ -73,21 +80,91 @@ liste.addEventListener("click", function (event) {
   }
 
   affichage();
+  calculerTotal();
 });
 
 
 affichage()
 
 
-//const card = document.createElement("article");
-//card.className = "product";
+
+const rechercheElement = document.querySelector(".recherche");
+const inputSearch = document.querySelector(".input-search");
+const resultatRechercher = document.querySelector(".modal");
+
+rechercheElement.addEventListener("click", function () {
+  inputSearch.classList.remove("hidden");
+});
+
+inputSearch.addEventListener("input", function () {
+  resultatRechercher.innerHTML = "";
+  let valeur = inputSearch.value.toLowerCase();
+
+ 
+
+  for (let produit of makeupProducts) {
+    if (produit.name.toLowerCase().includes(valeur)) {
+      let carte = document.createElement("div");
+      carte.classList.add("result-item");
 
 
-// const picture = document.createElement("div");
-// image.className = "picture";
-// const image = document.createElement("img");
-// image.src = "assests/picture";
-// image.alt = produit.name;
-// cart.appendChild(picture);
+      let infos = document.createElement("div");
+      infos.classList.add("result-info");
+
+      let nom = document.createElement("p");
+      nom.classList.add("result-name");
+      nom.textContent = produit.name + " - " + produit.variant;
+
+      let prix = document.createElement("p");
+      prix.classList.add("result-price");
+      prix.textContent = produit.price + " DH";
+
+      let bouton = document.createElement("button");
+      bouton.classList.add("btn-ajouter");
+      bouton.textContent = "Ajouter";
+
+      infos.appendChild(nom);
+      infos.appendChild(prix);
+      carte.appendChild(infos);
+      carte.appendChild(bouton);
+      resultatRechercher.appendChild(carte);
+    }
+  }
+});
+
+
+// fonction d'ajoute
+
+function ajouterAuPanier(produit) {
+  for (let product of makeupProducts) {
+    if (product.id === produit.id) {
+      product.quantity++;
+      
+    }
+  }
+  
+}
+
+  // calcule de total price 
+
+  const LIVRAISON = 25;
+  function calculerTotal() {
+  let sousTotal = 0;
+  let nombre = 0;
+
+  for (const produit of makeupCart) {
+    sousTotal = sousTotal + produit.price * produit.quantity;
+    nombre = nombre + produit.quantity;
+  }
+  const totalFinal = sousTotal + LIVRAISON;
+
+  totalElement.textContent = sousTotal.toFixed(2) + " DH";
+  countElement.textContent = nombre;
+  grandTotalElement.textContent = totalFinal.toFixed(2) + " DH";
+}
+
+
+
+
 
 

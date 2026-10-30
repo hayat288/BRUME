@@ -31,9 +31,7 @@
                     </div>
                     <input type="search" class="input-search hidden" >
 
-                    <div class="listeProducts">
-                        
-                    </div>
+                    <div  id="myModal"  class="modal"></div>
                     <div class="promo-copy">
                         <p class="eyebrow">SOIN · BEAUTÉ · ÉLÉGANCE</p>
                         <h2>
@@ -52,7 +50,7 @@
                     <h2>Récapitulatif de commande</h2>
                     <div class="summary-row">
                         <span>Sous-total (<span id="item-count">4</span> articles)</span>
-                        <span id="subtotal">460,00 DH</span>
+                        <span id="totale">97,00 DH</span>
                     </div>
                     <div class="summary-row">
                         <span>Livraison</span>
@@ -64,18 +62,18 @@
                     </div>
                     <div class="summary-total">
                         <span>Total</span>
-                        <strong id="total">485,00 DH</strong>
+                        <strong id="total">122,00 DH</strong>
                     </div>
                     <div class="notice">
                         <span aria-hidden="true">✓</span>
                         Votre sélection reste modifiable jusqu'au paiement.
                     </div>
                 </section>
-                <section class="panel payment-panel">
+                <section class="panel">
                     <h2>Informations de livraison et paiement</h2>
                     <form id="payment-form">
                         <div class="payment-form">
-                            <div class="field">
+                            <div class="case">
                                 <label for="fullname">
                                     Nom complet <span>*</span>
                                 </label>
@@ -86,10 +84,10 @@
                                     placeholder="Votre nom complet"
                                     minlength="3"
                                     maxlength="80"
-                                    required
+                                    
                                 >
                             </div>
-                            <div class="field">
+                            <div class="case">
                                 <label for="email">
                                     Adresse e-mail <span>*</span>
                                 </label>
@@ -99,10 +97,11 @@
                                     name="email"
                                     placeholder="exemple@domaine.com"
                                     maxlength="254"
+                                    pattern="^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$"
                                     required
                                 >
                             </div>
-                            <div class="field">
+                            <div class="case">
                                 <label for="phone">
                                     Téléphone <span>*</span>
                                 </label>
@@ -111,10 +110,10 @@
                                     id="phone"
                                     name="phone"
                                     placeholder="06 12 34 56 78"
-                                    required
+                                    pattern=""
                                 >
                             </div>
-                            <div class="field">
+                            <div class="case">
                                 <label for="address">
                                     Adresse de livraison <span>*</span>
                                 </label>
@@ -125,10 +124,9 @@
                                     placeholder="Rue, quartier, numéro..."
                                     minlength="8"
                                     maxlength="180"
-                                    required
                                 >
                             </div>
-                            <div class="field">
+                            <div class="case">
                                 <label for="city">
                                     Ville <span>*</span>
                                 </label>
@@ -139,10 +137,9 @@
                                     placeholder="Votre ville"
                                     minlength="2"
                                     maxlength="60"
-                                    required
                                 >
                             </div>
-                            <div class="field">
+                            <div class="case">
                                 <label for="nums">
                                      numéro de carte bancaire <span>*</span>
                                 </label>
@@ -152,10 +149,9 @@
                                     name=" numéro de carte bancaire"
                                     placeholder="1234 5678 9123 4567"
                                     maxlength="16"
-                                    required
                                 >
                             </div>
-                            <div class="field">
+                            <div class="case">
                                 <label for="date">
                                      date d'expiration <span>*</span>
                                 </label>
@@ -165,10 +161,9 @@
                                     name=" date d'expiration"
                                     placeholder="28/08/2030"
                                     maxlength="10"
-                                    required
                                 >
                             </div>
-                            <div class="field">
+                            <div class="case">
                                 <label for="cvv">
                                      CVV <span>*</span>
                                 </label>
@@ -178,7 +173,6 @@
                                     name=" CVV"
                                     placeholder=" 123"
                                     maxlength="3"
-                                    required
                                 >
                             </div>
                             <div class="security-note">
