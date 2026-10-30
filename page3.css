@@ -62,7 +62,7 @@ main {
     border-bottom: 1px solid #f0c9d4;
 }
 
-.product-picture img {
+.picture img {
     width: 80px;
     height: 80px;
     object-fit: cover;
@@ -72,15 +72,16 @@ main {
     flex: 1;
 }
 
-.product-variant {
+.variant {
     color: #a79397;
     font-size: 12px;
 }
 
 .quantity-control {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
 
 .quantity-control button {
@@ -194,4 +195,8 @@ main {
 
 .primary-button:hover {
     background: #632840;
+}
+
+.hidden{
+    display: none;
 }
