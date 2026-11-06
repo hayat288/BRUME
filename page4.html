@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ajouter un produit</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<main class="container py-4">
+  <div class="row g-4 justify-content-center">
+
+    <!-- ================= FORMULAIRE (wizard) ================= -->
+    <form id="wizard" class="col-lg-7 card rounded-4 shadow-sm p-4" novalidate>
+      <h1 class="h3 mb-3">Ajouter un produit</h1>
+
+      <!-- progress bar -->
+      <ol id="stepper" class="list-unstyled d-flex align-items-center gap-2 small mb-4">
+  <li class="step d-flex align-items-center gap-2" data-step="1">
+    <span class="circle rounded-circle d-inline-flex align-items-center justify-content-center text-bg-danger fw-bold" style="width:28px;height:28px">1</span>
+    <span class="label">Infos</span>
+  </li>
+
+  <li class="line flex-grow-1 border-top border-2 border-danger-subtle"></li>
+
+  <li class="step d-flex align-items-center gap-2" data-step="2">
+    <span class="circle rounded-circle d-inline-flex align-items-center justify-content-center bg-danger-subtle text-danger fw-bold" style="width:28px;height:28px">2</span>
+    <span class="label">Options</span>
+  </li>
+
+  <li class="line flex-grow-1 border-top border-2 border-danger-subtle"></li>
+
+  <li class="step d-flex align-items-center gap-2" data-step="3">
+    <span class="circle rounded-circle d-inline-flex align-items-center justify-content-center bg-danger-subtle text-danger fw-bold" style="width:28px;height:28px">3</span>
+    <span class="label">Récap</span>
+  </li>
+</ol>
+
+      <!-- ========== ÉTAPE 1 : Informations générales ========== -->
+
+      
+      <section class="step-panel row g-3" data-step="1" id="etape1">
+        <div class="col-md-6">
+          <label for="nom" class="form">Nom du produit *</label>
+          <input type="text" class="form-control" id="nom" placeholder="Rouge Velouté" required>
+          <div class="invalid-feedback"></div>
+
+        </div>
+        <div class="col-md-6">
+          <label for="type" class="form">Type d'article *</label>
+          <select class="form-select" id="type" required>
+            <option>Rouge à lèvres</option>
+            <option>Fond de teint</option>
+            <option>Fard à paupières</option>
+            <option>Mascara</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="prix" class="form">Prix de base (DH) *</label>
+          <input type="number" class="form-control" id="prix" min="0" step="0.01" placeholder="0.00" required>
+          <div class="invalid-feedback"></div>
+
+        </div>
+        <div class="col-md-6">
+          <label for="image" class="form">Image du produit (URL) *</label>
+          <input type="url" class="form-control" id="image" placeholder="https://..." required>
+          <div class="invalid-feedback"></div>
+
+        </div>
+
+        <div class="col-12">
+          <label for="description" class="form">Description *</label>
+          <textarea class="form-control" id="description" rows="4" placeholder="Décrivez le produit..." required></textarea>
+          <div class="invalid-feedback"></div>
+
+        </div>
+      <!-- Visible si il est coche  -->
+        <div class="col-12 form-check form-switch ps-5 fw-bold">
+          <input class="form-check-input" type="checkbox" role="switch" id="promo">
+          <label class="form-check-label" for="promo">Produit en promotion</label>
+        </div>
+        <div class="col-12" id="promo-box">
+        <div class="row g-3 bg-danger-subtle rounded-4 p-2 mx-0 d-none" id="promo-info">
+        <div class="col-md-6">
+          <label for="reduction" class="form">Pourcentage de réduction</label>
+          <input type="number" class="form-control" id="reduction" min="0" max="100" placeholder="15">
+          <div class="invalid-feedback"></div>
+        </div>
+        <div class="col-md-6">
+          <label for="date-fin" class="form">Date de fin de promo</label>
+          <input type="date" class="form-control" id="date-fin">
+          <div class="invalid-feedback"></div>
+        </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between mt-4">
+        <button type="button" id="next" class="btn btn-danger px-4">Suivant →</button>
+      </div>
+      </section>
+
+      <!-- ========== ÉTAPE 2 : Caractéristiques & options ========== -->
+      <section class="step-panel row g-3 " data-step="2" id="etape2" hidden>
+
+        <!-- Texture / Fini -->
+        <div class="col-12">
+          <label class="form">Texture / Fini</label>
+          <div class="row g-2">
+            <div class="col-6 col-md-3">
+              <input type="radio" class="btn-check" name="texture" id="texture-mat" value="Mat" autocomplete="off">
+              <label class="btn btn-outline-danger w-100" for="texture-mat">Mat</label>
+            </div>
+            <div class="col-6 col-md-3">
+              <input type="radio" class="btn-check" name="texture" id="texture-brillant" value="Brillant" autocomplete="off">
+              <label class="btn btn-outline-danger w-100" for="texture-brillant">Brillant</label>
+            </div>
+            <div class="col-6 col-md-3">
+              <input type="radio" class="btn-check" name="texture" id="texture-satine" value="Satiné" autocomplete="off">
+              <label class="btn btn-outline-danger w-100" for="texture-satine">Satiné</label>
+            </div>
+            <div class="col-6 col-md-3">
+              <input type="radio" class="btn-check" name="texture" id="texture-poudre" value="Poudré" autocomplete="off">
+              <label class="btn btn-outline-danger w-100" for="texture-poudre">Poudré</label>
+            </div>
+          </div>
+          <div class="text-danger small mt-1" id="texture-error"></div>
+        </div>
+
+        <!-- Teintes (module dynamique) -->
+        <div class="col-12 d-flex justify-content-between align-items-center">
+          <span class="small">Teintes</span>
+          <button type="button" id="add-teinte" class="btn btn-outline-danger btn-sm">+ Ajouter une teinte</button>
+        </div>
+        <div class="col-12">
+           
+          <div id="teintes-list" class="bg-danger-subtle rounded-4 p-3 d-grid gap-2"></div>
+          <div class="text-danger small mt-1" id="teintes-error"></div> 
+          </div>
+
+        <!-- Type de peau adapté -->
+        <div class="col-12">
+          <label class="form">Type de peau adapté</label>
+          <div class="d-flex flex-wrap gap-2">
+            <input type="checkbox" class="btn-check" name="peau" id="peau-grasse" value="Grasse" autocomplete="off">
+            <label class="btn btn-outline-secondary btn-sm rounded-pill" for="peau-grasse">Grasse</label>
+
+            <input type="checkbox" class="btn-check" name="peau" id="peau-seche" value="Sèche" autocomplete="off">
+            <label class="btn btn-outline-secondary btn-sm rounded-pill" for="peau-seche">Sèche</label>
+
+            <input type="checkbox" class="btn-check" name="peau" id="peau-mixte" value="Mixte" autocomplete="off">
+            <label class="btn btn-outline-secondary btn-sm rounded-pill" for="peau-mixte">Mixte</label>
+
+            <input type="checkbox" class="btn-check" name="peau" id="peau-sensible" value="Sensible" autocomplete="off">
+            <label class="btn btn-outline-secondary btn-sm rounded-pill" for="peau-sensible">Sensible</label>
+          </div>
+        </div>
+
+        <!-- Labels éthiques -->
+        <div class="col-12 form-check form-switch ps-5 fw-bold">
+          <input class="form-check-input" type="checkbox" role="switch" id="vegan">
+          <label class="form-check-label" for="vegan">Vegan / Cruelty-free</label>
+        </div>
+        <div class="d-flex justify-content-between mt-4">
+        <button type="button" id="prev" class="btn btn-outline-danger px-4">← Précédent</button>
+        <button type="button" id="next" class="btn btn-danger px-4">Suivant →</button>
+      </div>
+      </section>
+
+      <!-- ========== ÉTAPE 3 : Récapitulatif (carte produit) ========== -->
+       <section class="step-panel d-none" data-step="3">
+        <div class="card rounded-4 overflow-hidden">
+          <img id="recap-image" class="card-img-top" alt="Image du produit" style="max-height:220px;object-fit:cover">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <h2 class="h5 mb-0" id="recap-nom">Rouge Velouté</h2>
+                <p class="small text-muted mb-0" id="recap-type">Rouge à lèvres</p>
+              </div>
+              <span class="badge text-bg-danger" id="recap-promo-badge">-15 %</span>
+            </div>
+
+            <p class="small mt-3" id="recap-description">Description du produit</p>
+
+            <div class="mb-3">
+              <span class="fw-bold fs-5" id="recap-prix">20.40 DH</span>
+              <s class="text-muted small" id="recap-prix-barre">24.00 DH</s>
+              <div class="small text-muted" id="recap-date-fin">Promo jusqu'au 31/12/2026</div>
+            </div>
+
+            <dl class="row small mb-0">
+              <dt class="col-4">Texture</dt>
+              <dd class="col-8" id="recap-texture">Brillant</dd>
+
+              <dt class="col-4">Teintes</dt>
+              <dd class="col-8">
+                <ul class="list-unstyled mb-0" id="recap-teintes">
+                  <li>Rouge Passion</li>
+                </ul>
+              </dd>
+
+              <dt class="col-4">Peau</dt>
+              <dd class="col-8" id="recap-peau">Mixte</dd>
+            </dl>
+
+            <span class="badge bg-danger-subtle text-danger mt-3" id="recap-vegan">🌿 Vegan / Cruelty-free</span>
+          </div>
+        </div>
+        <aside class="col-lg-4 card rounded-4 shadow-sm p-4 h-100">
+      <h2 class="h4 mb-3">Aperçu du produit</h2>
+      <div class="bg-danger-subtle rounded-4 text-center small py-5 mb-3" id="preview-image">Image du produit</div>
+      <h3 class="h6 fw-bold mb-0" id="preview-nom">Rouge Velouté</h3>
+      <p class="small text-muted" id="preview-type">Rouge à lèvres</p>
+      <div class="d-flex justify-content-between small">
+        <span>Prix de base</span><span id="preview-prix">24.00 DH</span>
+      </div>
+      <div class="d-flex justify-content-between small mb-3">
+        <span>Promotion</span><span id="preview-promo">-15 %</span>
+      </div>
+      <div class="alert alert-danger bg-danger-subtle border-0 small mb-0">✓ Votre fiche reste modifiable jusqu'à la confirmation.</div>
+    </aside>
+    <div class="d-flex justify-content-between mt-4">
+        <button type="button" id="prev" class="btn btn-outline-danger px-4">← Précédent</button>
+        <button type="button" id="next" class="btn btn-danger px-4">Suivant →</button>
+      </div>
+      </section>
+    
+    </form>
+
+  
+
+  </div>
+</main>
+
+<script src="page4.js"></script>
+</body>
+</html>
