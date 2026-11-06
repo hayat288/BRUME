@@ -104,6 +104,8 @@ inputSearch.addEventListener("input", function () {
 
   for (let produit of makeupProducts) {
     if (produit.name.toLowerCase().includes(valeur)) {
+
+      
       let carte = document.createElement("div");
       carte.classList.add("result-item");
 
@@ -162,9 +164,5 @@ function ajouterAuPanier(produit) {
   countElement.textContent = nombre;
   grandTotalElement.textContent = totalFinal.toFixed(2) + " DH";
 }
-
-
-
-
 
 
