@@ -22,161 +22,16 @@
         <div class="layout">
             <div class="left-column">
                 <section class="panel cart-panel" id="panier">
-                    <div id="product-list">
-                        <article class="product" data-id="1">
-                            <div class="product-picture">
-                                <img
-                                    src="assets/rouge-a-levres.png"
-                                    alt="Rouge à lèvres"
-                                >
-                            </div>
-                            <div class="product-info">
-                                <h3 class="product-name">Rouge à lèvres</h3>
-                                <p class="product-variant">
-                                    02 Rosewood · Fini mat
-                                </p>
-                            </div>
-                            <div class="unit-price">
-                                120,00 DH
-                            </div>
-                             <div class="quantity-control">
-                                <button
-                                    type="button"
-                                    class="minus"
-                                    aria-label="Diminuer la quantité"
-                                >−</button>
-                                <span class="quantity">1</span>
-                                <button
-                                    type="button"
-                                    class="plus"
-                                    aria-label="Augmenter la quantité"
-                                >+</button>
-                            </div>
-                            <span class="line-total">120,00 DH</span>
-                            <button
-                                type="button"
-                                class="remove"
-                                aria-label="Supprimer le rouge à lèvres"
-                            >×</button>
-                        </article>
-                        <article class="product" data-id="2">
-                            <div class="product-picture">
-                                <img
-                                    src="assets/fond-de-teint.png"
-                                    alt="Fond de teint"
-                                >
-                            </div>
-                            <div class="product-info">
-                                <h3 class="product-name">Fond de teint</h3>
-                                <p class="product-variant">
-                                    Teinte naturelle
-                                </p>
-                            </div>
-                            <div class="unit-price">
-                                160,00 DH
-                            </div>
-                             <div class="quantity-control">
-                                <button
-                                    type="button"
-                                    class="minus"
-                                    aria-label="Diminuer la quantité"
-                                >−</button>
-                                <span class="quantity">1</span>
-                                <button
-                                    type="button"
-                                    class="plus"
-                                    aria-label="Augmenter la quantité"
-                                >+</button>
-                            </div>
-                            <span class="line-total">160,00 DH</span>
-                            <button
-                                type="button"
-                                class="remove"
-                                aria-label="Supprimer le fond de teint"
-                            >×</button>
-                        </article>
-
-                        <article class="product" data-id="3">
-                            <div class="product-picture">
-                                <img
-                                    src="assets/blush.png"
-                                    alt="Blush"
-                                >
-                            </div>
-                            <div class="product-info">
-                                <h3 class="product-name">Blush</h3>
-                                <p class="product-variant">
-                                    Rose délicat
-                                </p>
-                            </div>
-                            <div class="unit-price">
-                                95,00 DH                        
-                            </div>
-                            <div class="quantity-control">
-                                <button
-                                    type="button"
-                                    class="minus"
-                                    aria-label="Diminuer la quantité"
-                                >−</button>
-                                <span class="quantity">1</span>
-                                <button
-                                    type="button"
-                                    class="plus"
-                                    aria-label="Augmenter la quantité"
-                                >+</button>
-                            </div>
-                            <span class="line-total">95,00 DH</span>
-
-                            <button
-                                type="button"
-                                class="remove"
-                                aria-label="Supprimer le blush"
-                            >×</button>
-                        </article>
-                        <article class="product" data-id="4">
-                            <div class="product-picture">
-                                <img
-                                    src="assets/mascara.png"
-                                    alt="Mascara"
-                                >
-                            </div>
-                            <div class="product-info">
-                                <h3 class="product-name">Mascara</h3>
-                                <p class="product-variant">
-                                    Noir intense
-                                </p>
-                            </div>
-                            <div class="unit-price">
-                                85,00 DH
-                            </div>
-                            <div class="quantity-control">
-                                <button
-                                    type="button"
-                                    class="minus"
-                                    aria-label="Diminuer la quantité"
-                                >−</button>
-                                <span class="quantity">1</span>
-                                <button
-                                    type="button"
-                                    class="plus"
-                                    aria-label="Augmenter la quantité"
-                                >+</button>
-                            </div>
-                            <span class="line-total">85,00 DH</span>
-                            <button
-                                type="button"
-                                class="remove"
-                                aria-label="Supprimer le mascara"
-                            >×</button>
-                        </article>
+                    <div class="product-list">
                     </div>
                 </section>
                  <section class="promo">
                     <div class="recherche">
                         <button>Ajouter un autre produit</button>
                     </div>
-                    <div class="promo-illustration">
-                    </div>
+                    <input type="search" class="input-search hidden" >
+
+                    <div  id="myModal"  class="modal"></div>
                     <div class="promo-copy">
                         <p class="eyebrow">SOIN · BEAUTÉ · ÉLÉGANCE</p>
                         <h2>
@@ -195,7 +50,7 @@
                     <h2>Récapitulatif de commande</h2>
                     <div class="summary-row">
                         <span>Sous-total (<span id="item-count">4</span> articles)</span>
-                        <span id="subtotal">460,00 DH</span>
+                        <span id="totale">97,00 DH</span>
                     </div>
                     <div class="summary-row">
                         <span>Livraison</span>
@@ -207,18 +62,18 @@
                     </div>
                     <div class="summary-total">
                         <span>Total</span>
-                        <strong id="total">485,00 DH</strong>
+                        <strong id="total">122,00 DH</strong>
                     </div>
                     <div class="notice">
                         <span aria-hidden="true">✓</span>
                         Votre sélection reste modifiable jusqu'au paiement.
                     </div>
                 </section>
-                <section class="panel payment-panel">
+                <section class="panel">
                     <h2>Informations de livraison et paiement</h2>
                     <form id="payment-form">
                         <div class="payment-form">
-                            <div class="field">
+                            <div class="case">
                                 <label for="fullname">
                                     Nom complet <span>*</span>
                                 </label>
@@ -229,10 +84,10 @@
                                     placeholder="Votre nom complet"
                                     minlength="3"
                                     maxlength="80"
-                                    required
+                                    
                                 >
                             </div>
-                            <div class="field">
+                            <div class="case">
                                 <label for="email">
                                     Adresse e-mail <span>*</span>
                                 </label>
@@ -242,10 +97,11 @@
                                     name="email"
                                     placeholder="exemple@domaine.com"
                                     maxlength="254"
+                                    pattern="^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$"
                                     required
                                 >
                             </div>
-                            <div class="field">
+                            <div class="case">
                                 <label for="phone">
                                     Téléphone <span>*</span>
                                 </label>
@@ -254,10 +110,10 @@
                                     id="phone"
                                     name="phone"
                                     placeholder="06 12 34 56 78"
-                                    required
+                                    pattern=""
                                 >
                             </div>
-                            <div class="field">
+                            <div class="case">
                                 <label for="address">
                                     Adresse de livraison <span>*</span>
                                 </label>
@@ -268,10 +124,9 @@
                                     placeholder="Rue, quartier, numéro..."
                                     minlength="8"
                                     maxlength="180"
-                                    required
                                 >
                             </div>
-                            <div class="field">
+                            <div class="case">
                                 <label for="city">
                                     Ville <span>*</span>
                                 </label>
@@ -282,10 +137,9 @@
                                     placeholder="Votre ville"
                                     minlength="2"
                                     maxlength="60"
-                                    required
                                 >
                             </div>
-                            <div class="field">
+                            <div class="case">
                                 <label for="nums">
                                      numéro de carte bancaire <span>*</span>
                                 </label>
@@ -295,10 +149,9 @@
                                     name=" numéro de carte bancaire"
                                     placeholder="1234 5678 9123 4567"
                                     maxlength="16"
-                                    required
                                 >
                             </div>
-                            <div class="field">
+                            <div class="case">
                                 <label for="date">
                                      date d'expiration <span>*</span>
                                 </label>
@@ -308,10 +161,9 @@
                                     name=" date d'expiration"
                                     placeholder="28/08/2030"
                                     maxlength="10"
-                                    required
                                 >
                             </div>
-                            <div class="field">
+                            <div class="case">
                                 <label for="cvv">
                                      CVV <span>*</span>
                                 </label>
@@ -321,7 +173,6 @@
                                     name=" CVV"
                                     placeholder=" 123"
                                     maxlength="3"
-                                    required
                                 >
                             </div>
                             <div class="security-note">
@@ -342,6 +193,6 @@
             </div>
         </div>
     </main>
-    <script src=""></script>
+    <script src="page3.js"></script>
 </body>
 </html>

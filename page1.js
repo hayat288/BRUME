@@ -22,12 +22,9 @@ let selectedConfig = {
     teinte: null,
     fini: null,
 };
-
-
 const produitsHTML = document.querySelectorAll('input[name="essentiel"]');
 const teintesHTML = document.querySelectorAll('input[name="teinte"]');
 const finisHTML = document.querySelectorAll('input[name="fini"]');
-
 
 for (let cle in config.categorie) {
     let produit = config.categorie[cle];
